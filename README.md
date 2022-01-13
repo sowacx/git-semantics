@@ -24,7 +24,7 @@ Please use semantic commit messages:
 feat[(scope)]: add hat wobble #number
 ^--^ ^--*--^   ^------------^ -> Summary in present tense.
  *      *-> [optional]: Scope of the commit.
- *-> Type: chore, docs, feat, fix, merge, perf, refact, style, test, wip or pipe.
+ *-> Type: chore, docs, feat, fix, merge, pipe, refact, style, test or wip.
 leo@sputnik:~/Code/git-semantics$ git commit -m "feat: add installer #123"
 [master 6333498] feat: add installer #123
  1 file changed, 23 insertions(+)
