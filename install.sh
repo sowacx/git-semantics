@@ -10,7 +10,7 @@ if [ "$#" == "1" ]; then
       exit 1
     else
       echo "Copying file..."
-      sudo cp commit-msg $INSTALL_FOLDER/
+      cp commit-msg $INSTALL_FOLDER/
       echo "Done! Installed n ${INSTALL_FOLDER}"
       exit 0
     fi
@@ -18,27 +18,7 @@ if [ "$#" == "1" ]; then
     echo "Sorry, couldn't find $INSTALL_FOLDER"
 	  exit 1 
   fi
-fi
-
-# Try to find git-core hooks folder.
-if [ -z $(which locate) ] ; then
-  echo "Go get Linux."
-  exit 1
-fi
-INSTALL_FOLDER=$(locate -l 1 git-core/templates/hooks)
-
-if [ -n $INSTALL_FOLDER ] && [ -d $INSTALL_FOLDER ] ; then
-  if [ -e "$INSTALL_FOLDER/commit-msg" ] ; then
-    echo "You're already using commit-msg hooks, you'll need to install this manually."
-    echo "You can also use this only on specific projects running ./install.sh path/to/a/repo"
-    exit 1
-  else
-    echo "Copying file..."
-    sudo cp commit-msg $INSTALL_FOLDER/
-    echo "Done! Installed n ${INSTALL_FOLDER}"
-    exit 0
-  fi
 else
-  echo "I didn't found the git-core folder, please install it manually."
+  echo "You need pass git repo path as first argument."
   exit 1
 fi

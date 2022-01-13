@@ -1,8 +1,7 @@
 # git-semantics
-Git hook to ensure semantic commit messages.
+Git hook to ensure semantic commit messages. Forked from https://github.com/kewitz/git-semantics and adopted to use at some project.
 
-You can install this on your templates using `./install.sh` so when you use `git init` you'll have this done.
-You can also use this only on specific projects running `./install.sh path/to/a/repo`
+You can install this only on specific projects running `./install.sh path/to/a/repo`
 
 
 #### Emoji
@@ -22,18 +21,15 @@ Optionally, you can use the `commit-emoji.sh` script to add some emoji locally t
 ```
 leo@sputnik:~/Code/git-semantics$ git commit -am "teste"
 Please use semantic commit messages:
-Please use semantic commit messages:
-feat[(scope)]: add hat wobble
+feat[(scope)]: add hat wobble #number
 ^--^ ^--*--^   ^------------^ -> Summary in present tense.
  *      *-> [optional]: Scope of the commit.
- *-> Type: chore, docs, feat, fix, merge, perf, refact, style, test, or wip.
-leo@sputnik:~/Code/git-semantics$ git commit -m "feat: add installer"
-[master 6333498] feat: add installer
+ *-> Type: chore, docs, feat, fix, merge, perf, refact, style, test, wip or pipe.
+leo@sputnik:~/Code/git-semantics$ git commit -m "feat: add installer #123"
+[master 6333498] feat: add installer #123
  1 file changed, 23 insertions(+)
  create mode 100755 install.sh
 ```
-
-
 
 
 
@@ -41,6 +37,7 @@ leo@sputnik:~/Code/git-semantics$ git commit -m "feat: add installer"
 
 1. https://seesparkbox.com/foundry/semantic_commit_messages
 2. http://karma-runner.github.io/0.10/dev/git-commit-msg.html
+3. https://github.com/kewitz/git-semantics
 
 #### License
 Code released under the Beer-Ware license.
